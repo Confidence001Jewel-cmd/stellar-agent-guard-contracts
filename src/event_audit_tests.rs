@@ -626,12 +626,12 @@ fn window_merge_event_emits_once_at_the_entry_bound() {
     let all_events = env.events().all();
     let events = all_events.events();
     assert_eq!(events.len(), 1);
+    let event = events.first().unwrap();
     assert!(matches!(
-        &events.get(0).unwrap().body,
+        &event.body,
         xdr::ContractEventBody::V0(v0)
             if v0.topics.first() == Some(&event_name("event_window_merged"))
     ));
-    let event = events.get(0).unwrap();
-    assert_eq!(map_u64_field(&event, "merged_ts"), 1);
-    assert_eq!(map_i128_field(&event, "merged_value"), 2);
+    assert_eq!(map_u64_field(event, "merged_ts"), 1);
+    assert_eq!(map_i128_field(event, "merged_value"), 2);
 }

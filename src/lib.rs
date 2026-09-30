@@ -974,8 +974,8 @@ impl CustomAccountInterface for PolicyEngine {
 
         if all_passed {
             // 4. Persist window changes made by the decision.
-            for merge in ledger.merges.iter() {
-                emit_window_merge(&env, *merge);
+            for &merge in &ledger.merges {
+                emit_window_merge(&env, merge);
             }
             let has_entries = ledger.len() > 0 || ledger_has_recipient_entries(&ledger);
             if window_persisted || has_entries {
