@@ -239,7 +239,8 @@ integration test deserializes this fixture and fails if it drifts from the
 
 The SDK and dashboard should load this file from the contracts repository in
 their decoder tests rather than maintaining copied vocabularies. Their
-companion tracking issues are linked in the related pull request.
+companion tracking issues are [SDK #263](https://github.com/Stellar-Agent-Guard/stellar-agent-guard-sdk/issues/263)
+and [dashboard #263](https://github.com/Stellar-Agent-Guard/stellar-agent-guard-dashboard/issues/263).
 
 > **Companion note for `stellar-agent-guard-sdk`:** consume `index.json`
 > instead of scraping this markdown — parse `schema_version` first and treat an
