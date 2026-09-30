@@ -1,11 +1,10 @@
-//! Shared XDR vectors for PolicyConfig encoding parity with the TypeScript SDK.
+//! Shared XDR vectors for `PolicyConfig` encoding parity with the TypeScript SDK.
 //!
 //! The fixture is canonical in the contracts repository; the SDK follow-up
 //! issue points its `policyToScVal` test at this same file.
 
 use serde_json::Value;
 use soroban_sdk::{
-    testutils::Address as _,
     xdr::{FromXdr, ToXdr},
     Address, Bytes, Env, Symbol, Vec as SdkVec,
 };
