@@ -1,4 +1,4 @@
-//! Keeps the consumer-facing auth_checked vocabulary fixture in sync with Error.
+//! Keeps the consumer-facing `auth_checked` vocabulary fixture in sync with Error.
 
 use std::collections::BTreeMap;
 use std::fs;
