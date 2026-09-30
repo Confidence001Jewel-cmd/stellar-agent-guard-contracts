@@ -622,7 +622,8 @@ fn window_merge_event_emits_once_at_the_entry_bound() {
     assert_eq!(merge.kind, WindowMergeKind::GlobalSpend);
     assert_eq!(merge.merged_ts, 1);
     assert_eq!(merge.merged_value, 2);
-    emit_window_merge(&env, merge);
+    let contract = env.register(MockAdmin, ());
+    env.as_contract(&contract, || emit_window_merge(&env, merge));
 
     let all_events = env.events().all();
     let events = all_events.events();
