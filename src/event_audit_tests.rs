@@ -623,7 +623,8 @@ fn window_merge_event_emits_once_at_the_entry_bound() {
     assert_eq!(merge.merged_value, 2);
     emit_window_merge(&env, merge);
 
-    let events = env.events().all().events();
+    let all_events = env.events().all();
+    let events = all_events.events();
     assert_eq!(events.len(), 1);
     assert!(matches!(
         &events.get(0).unwrap().body,
