@@ -605,6 +605,7 @@ fn policy_revision_sequence_is_incremental_and_stamped_on_auth_events() {
 #[test]
 fn window_merge_event_emits_once_at_the_entry_bound() {
     let env = Env::default();
+    env.cost_estimate().budget().reset_unlimited();
     let mut ledger = Ledger::empty(&env);
     for ts in 0..crate::types::MAX_WINDOW_ENTRIES as u64 {
         ledger.admit(ts, 1);
